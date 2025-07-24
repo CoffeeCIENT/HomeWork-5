@@ -9,23 +9,22 @@ public class Main {
             System.out.println("Установите версию приложения для iOS по ссылке");
         }
 
-        char ClientOS = '0';
+        char client_OS = '0';
         int clientDeviceYear = 2010;
-        if (clientDeviceYear < 2015) {
-            if (ClientOS == '1') {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-            }
-            if (ClientOS == '0') {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            }
-        } else if (ClientOS == '1') {
+        if (clientDeviceYear < 2015 && client_OS == '1') {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        } else if (clientDeviceYear < 2015 && client_OS == '0') {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        } else if (client_OS == '1') {
             System.out.println("Установите версию приложения для Android по ссылке");
-        } else if (ClientOS == '0') {
+        } else if (client_OS == '0') {
             System.out.println("Установите версию приложения для iOS по ссылке");
         }
 
-        int year = 2021;
-        if (((year - 1200) % 4) == 0) {
+        int year = 1808;
+        if (year <= 1584) {
+            System.out.println("Год должен быть больше 1584");
+        } else if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
             System.out.println(year + " год является високосным");
         } else {
             System.out.println(year + " год не является високосным");
@@ -42,43 +41,27 @@ public class Main {
             System.out.println("Доставки нет");
         }
 
-        int monthNumber = 22;
+        int monthNumber = 15;
         switch (monthNumber) {
+            case 12:
             case 1:
-                System.out.println(monthNumber + " месяц - январь");
-                break;
             case 2:
-                System.out.println(monthNumber + " месяц - февраль");
+                System.out.println("сезон - зима");
                 break;
             case 3:
-                System.out.println(monthNumber + " месяц - март");
-                break;
             case 4:
-                System.out.println(monthNumber + " месяц - апрель");
-                break;
             case 5:
-                System.out.println(monthNumber + " месяц - май");
+                System.out.println("сезон - весна");
                 break;
             case 6:
-                System.out.println(monthNumber + " месяц - июнь");
-                break;
             case 7:
-                System.out.println(monthNumber + " месяц - июль");
-                break;
             case 8:
-                System.out.println(monthNumber + " месяц - август");
+                System.out.println("сезон - лето");
                 break;
             case 9:
-                System.out.println(monthNumber + " месяц - сентябрь");
-                break;
             case 10:
-                System.out.println(monthNumber + " месяц - октябрь");
-                break;
             case 11:
-                System.out.println(monthNumber + " месяц - ноябрь");
-                break;
-            case 12:
-                System.out.println(monthNumber + " месяц - декабрь");
+                System.out.println("сезон - осень");
                 break;
             default:
                 System.out.println("Указанного месяца не существует");
